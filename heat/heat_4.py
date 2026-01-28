@@ -28,7 +28,8 @@ from mpl_toolkits.mplot3d import Axes3D
 #####################################################################
 
 # Load the data
-data_file = 'data.csv'
+script_dir = os.path.dirname(__file__)
+data_file = os.path.join(script_dir, 'data.csv')
 df = pd.read_csv(data_file)
 
 # Define input parameters
@@ -118,7 +119,7 @@ predicted_mesh = scaler_Y.inverse_transform(nn_model.predict(input_mesh_scaled))
 predicted_mesh = predicted_mesh + T2_mesh
 
 # Load the entire dataset
-df_all = pd.read_csv('data_all.csv')
+df_all = pd.read_csv(os.path.join(script_dir, 'data_all.csv'))
 
 # Plotting
 fig = plt.figure(figsize=(14, 7))

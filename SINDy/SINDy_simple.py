@@ -9,6 +9,7 @@
 import pandas as pd
 import numpy as np
 import itertools
+import os
 import pysindy as ps
 from sklearn.linear_model import Lasso
 import matplotlib.pyplot as plt
@@ -80,7 +81,8 @@ def generate_functions_and_names():
 # Main Code
 #####################################################################################
 # Prepare data for SINDy
-df = pd.read_csv('data_'+str(option)+'.csv')
+script_dir = os.path.dirname(__file__)
+df = pd.read_csv(os.path.join(script_dir, 'data_'+str(option)+'.csv'))
 
 xdot_train_multi = [df[['xdot']].values]
 x_train_multi = [df[['x']].values]
