@@ -1,3 +1,19 @@
+/.venv
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+*.egg-info/
+dist/
+build/
+# Editor backups
+*~
+# Ignore python virtual envs and caches
 # Python
 __pycache__/
 *.py[cod]
