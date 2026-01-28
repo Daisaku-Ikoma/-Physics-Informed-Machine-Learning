@@ -9,6 +9,7 @@
 import warnings
 import pandas as pd
 import numpy as np
+import os
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, DotProduct, Matern, ConstantKernel as C, WhiteKernel as W
 from sklearn.metrics import mean_squared_error
@@ -25,7 +26,8 @@ warnings.filterwarnings("ignore", category=ConvergenceWarning)
 # Input parameters
 #####################################################################################
 # Defining inputs and outputs
-data_file = 'adhesive.csv'
+script_dir = os.path.dirname(__file__)
+data_file = os.path.join(script_dir, 'adhesive.csv')
 df = pd.read_csv(data_file)
 
 # Selection option: 1 = traditional ML, 2: Physics-informed ML
