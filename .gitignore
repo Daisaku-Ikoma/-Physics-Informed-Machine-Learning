@@ -14,6 +14,8 @@ build/
 # Editor backups
 *~
 # Ignore python virtual envs and caches
+# Ignore PDF files (educational resources from external sources)
+*.pdf
 # Python
 __pycache__/
 *.py[cod]
